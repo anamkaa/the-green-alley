@@ -1,0 +1,23 @@
+
+
+.gh-wishlist-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gh-dismiss {
+  color: var(--gh-offwhite);
+  font-size: 1.2rem;
+}
+
+.gh-wishlist-header {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,0 +1,61 @@
+
+
+.gh-hr-card {
+  justify-content: space-between;
+  height: fit-content;
+  border-radius: 0.2rem;
+}
+
+.gh-cart-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.gh-hr-card-content {
+  margin: 0.5rem;
+}
+
+.gh-card-wrap {
+  margin-bottom: 5rem;
+}
+
+.gh-cart-icon {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.gh-badge {
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+
+.detail-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem 0;
+}
+
+.details-wrap {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+
+.hr {
+  margin: 0.5rem 0;
+}
+
+.gh-card-content {
+  padding: 1rem;
+}
+
+.gh-btn-inline {
+  margin-inline: 0rem;
+}
+
+@media screen and (max-width: 700px) {
+  .gh-hr-card-res {
+    flex-direction: column;
+  }
+}
+
