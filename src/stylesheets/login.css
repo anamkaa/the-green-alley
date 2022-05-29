@@ -1,0 +1,96 @@
+
+
+body {
+  background-color: var(--gh-bg1);
+}
+
+.main-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+}
+
+.gh-login-title {
+  margin: 1rem;
+  font-weight: 600;
+}
+
+.gh-login-wrap {
+  margin: 1rem;
+  width: 22rem;
+  background-color: var(--gh-bg2);
+  border-radius: 0.2rem;
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 1px, rgb(0 0 0 / 2%) 0px 4px 4px,
+    rgb(0 0 0 / 2%) 0px 4px 4px, rgb(0 0 0 / 2%) 0px 8px 8px,
+    rgb(0 0 0 / 2%) 0px 16px 16px;
+}
+
+.gh-input-margin {
+  margin: 1rem 3rem ;
+}
+
+.gh-input-wrap-row {
+  display: flex;
+  align-items: center;
+}
+
+.gh-input-text {
+  font-size: 0.9rem;
+}
+
+.gh-input-wrap-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-checkbox-text {
+  font-size: 0.8rem;
+  margin: 0 0.3rem ;
+}
+
+.gh-chev {
+  font-size: 0.7rem;
+}
+
+.gh-login-btn {
+  background-color: var(--gh-green1);
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  font-weight: 500;
+}
+
+.gh-login-btn:hover {
+  background-color: var(--gh-green2);
+}
+
+::-ms-input-placeholder {
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin: 2rem; /* Microsoft Edge */
+}
+::placeholder {
+  font-size: 0.8rem;
+  margin: 2rem; /* Firefox, Chrome, Opera */
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gh-green-text {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--gh-green2);
+}
+
+@media screen and (max-width:600px) {
+
+  .gh-txt-sm{
+    font-size: 0.58rem;
+  }
+  
+}
+
+

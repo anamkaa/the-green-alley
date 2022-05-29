@@ -1,13 +1,41 @@
+@import url("https://fab-ui-lib.netlify.app/stylesheets/main.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,500;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap");
+@import url("../src/stylesheets/cart-management.css");
+@import url("../src/stylesheets/home-page.css");
+@import url("../src/stylesheets/login.css");
+@import url("../src/stylesheets/product.css");
+@import url("../src/stylesheets/signup.css");
+@import url("../src/stylesheets/wishlist.css");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+:root{
+  --gh-blk: #0f172a;
+  --gh-bg1: #f2f3f4;
+  --gh-bg2: #f8f9fa;
+  --gh-gray: #9d9ead;
+  --gh-green1: #308A76;
+  --gh-green3: #007057; 
+  --gh-green2: #078A6C;
+  --gh-offwhite: #f0f1f3;
+  --gh-white: #FFFFFF;
+
+  --gh-card-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+  rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+  --gh-card-shadow-hover: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  --gh-footer-shadow:  0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+  0 1px 3px 0 rgb(0 0 0 / 12%);
+}
+
+input {
+  accent-color: var(--gh-green1);
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
