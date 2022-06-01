@@ -1,5 +1,3 @@
-
-
 .gh-prod-wrap {
   flex: 80%;
   display: flex;
@@ -20,7 +18,7 @@
   flex: 20%;
   border: 1px solid var(--gh-green1);
   border-radius: 0.3rem;
-  background-color: var(--bg-color);
+  background-color: #fefefe;
 }
 
 .gh-filter-wrap-row {
@@ -47,6 +45,7 @@
   box-shadow: var(--gh-card-shadow);
   max-width: 15rem;
   height: fit-content;
+  background-color: #fefefe;
 }
 
 .gh-card:hover {
@@ -125,17 +124,17 @@
   border-top-right-radius: 0.2rem;
 }
 
-.filter-btn-wrap{
+.filter-btn-wrap {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color:  var(--gh-bg2);
+  background-color: var(--gh-bg2);
   z-index: 9999;
   display: none;
   margin-top: 4rem;
 }
 
-.btn-filter{
+.btn-filter {
   padding: 0.5rem;
   margin: 0.5rem;
   font-size: 1.2rem;
@@ -147,51 +146,49 @@
   align-items: center;
 }
 
-.btn-filter .ph-list{
+.btn-filter .ph-list {
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 650px) {
+  .filter-btn-wrap {
+    display: block;
+  }
 
-@media screen  and (max-width:650px) {
-   
-.filter-btn-wrap{
-  display: block;
-}
+  .gh-filter-wrap {
+    display: none;
+  }
 
-.gh-filter-wrap{
-  display: none;
-}
+  .gh-filter-wrap.show {
+    display: block;
+    position: fixed;
+    z-index: 9990;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 1rem;
+  }
 
-.gh-filter-wrap.show {
-  display: block;
-  position: fixed;
-  z-index: 9990;
-  top: 0;
-  margin: 0;
-  width: 100%;
-  font-size: 1rem;
-}
+  .gh-filter-wrap-col {
+    margin: 0.1;
+    padding: 0;
+  }
 
-.gh-filter-wrap-col{
-  margin: 0.1;
-  padding: 0;
-}
+  .gh-filter-slider,
+  .gh-slider {
+    width: 60%;
+  }
 
-.gh-filter-slider , .gh-slider{
-  width: 60%;
-}
+  .gh-card {
+    max-width: 8.5rem;
+  }
 
-.gh-card{
-  max-width: 8.5rem;
-}
+  .price-text {
+    font-size: 0.6rem;
+  }
 
-.price-text{
-  font-size: 0.6rem;
+  .gh-btn {
+    font-size: 0.7rem;
+    padding: 0.1rem;
+  }
 }
-
-.gh-btn{
-  font-size: 0.7rem;
-  padding: 0.1rem;
-}
-}
-
