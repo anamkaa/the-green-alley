@@ -3,6 +3,7 @@ import { User, HeartStraight , ShoppingCartSimple ,Tree } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { useCart } from '../../context/cart-context';
 import { useWishlist } from '../../context/wishlist-context';
+import { useFilter } from '../../context/filter-context';
 
 const Navbar = () => {
   const urlPathname = window.location.pathname;
@@ -15,6 +16,8 @@ const Navbar = () => {
 
   const {items} = useCart();
   const {wishlist} = useWishlist();
+  const {filterState : {bySearch} , filterDispatch} = useFilter();
+
   return (
       <>
        <script src="https://unpkg.com/phosphor-icons"></script>
@@ -25,7 +28,9 @@ const Navbar = () => {
 
 <div className="gh-search-holder nav-search-holder-icon nav-el-2">
 <i className="fa-solid fa-seedling nav-search-icon fas"></i>
-<input type="search" className="input gh-search" placeholder="Search for products, brands and more"/>
+<input type="search" className="input gh-search" placeholder="Search for products, brands and more" onChange={(e)=>{
+  filterDispatch({type:'FILTER_BY_SEARCH', payload: e.target.value })
+}}/>
 </div>
 
 <div className="gh-nav-icon-wrap nav-el-3">
