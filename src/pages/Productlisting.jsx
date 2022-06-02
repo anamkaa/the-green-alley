@@ -5,12 +5,7 @@ import Filter from "../components/filter/Filter";
 import Navbar from "../components/navbar/Navbar";
 import { useProduct } from "../context/product-context";
 import { useFilter } from "../context/filter-context";
-import { getSortedProduct } from "../utils/sort-by-price";
-import { getCategoryProduct } from "../utils/filter-by-category";
-import { getRatingProduct } from "../utils/filter-by-rating";
-import { getStockProduct } from "../utils/filter-by-stock";
-import { getSearchProduct } from "../utils/filter-by-search";
-import { getPricedProduct } from "../utils/filter-by-price";
+import {getSortedProduct,getCategoryProduct,getRatingProduct,getStockProduct,getSearchProduct,getPricedProduct} from "../utility/index";
 
 const Productlisting = () => {
   const {
