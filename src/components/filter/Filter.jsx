@@ -8,7 +8,6 @@ const Filter = () => {
       byPlantCategory,
       byPotCategory,
       byToolCategory,
-      bySearch,
       byStock,
       byRating,
       byRange,
@@ -22,9 +21,8 @@ const Filter = () => {
         <div className="gh-filter-wrap-row">
           <div className="h6 text-bold gh-filter-title">Filters</div>
           <div
-            className="h6 gh-filter-clear gh-filter-title"
+            className="h6 gh-filter-clear gh-filter-title cursor"
             id="btn-filter-clear"
-            style={{ cursor: "pointer" }}
             onClick={() => {
               filterDispatch({ type: "CLEAR_FILTERS" });
             }}

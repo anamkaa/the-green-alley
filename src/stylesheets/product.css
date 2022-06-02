@@ -192,3 +192,7 @@
     padding: 0.1rem;
   }
 }
+
+.cursor{
+  cursor: pointer;
+}
