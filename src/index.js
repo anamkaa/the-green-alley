@@ -8,6 +8,7 @@ import { CartProvider } from './context/cart-context';
 import { WishlistProvider } from './context/wishlist-context';
 import {CategoryProvider} from './context/category-context';
 import { ProductProvider } from "./context/product-context";
+import { FilterProvider } from "./context/filter-context";
 
 // Call make Server
 makeServer();
@@ -22,7 +23,9 @@ root.render(
       <WishlistProvider>
         <CategoryProvider>
           <ProductProvider>
+            <FilterProvider>
     <App />
+    </FilterProvider>
     </ProductProvider>
     </CategoryProvider>
     </WishlistProvider>
