@@ -43,7 +43,7 @@
 .gh-card {
   border-radius: 0.2rem;
   box-shadow: var(--gh-card-shadow);
-  max-width: 15rem;
+  width: 15rem;
   height: fit-content;
   background-color: #fefefe;
 }
@@ -63,7 +63,7 @@
 .gh-btn {
   border-radius: 0.2rem;
   font-size: 1rem;
-  width: 100%;
+  width: 14rem;
 }
 
 .gh-btn-primary {
@@ -103,6 +103,7 @@
 .gh-heart {
   color: var(--gh-green1);
   z-index: 9;
+  top: 3%;
 }
 
 .gh-filter-slider {

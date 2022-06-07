@@ -1,52 +1,84 @@
 import React from "react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { Link } from "react-router-dom";
+import { HeartStraight } from "phosphor-react";
 
 const Productcard = ({ product }) => {
-  const { addToCart } = useCart();
-  const { addToWishlist } = useWishlist();
+  const {
+    cartState: { cart },
+    cartDispatch,
+  } = useCart();
+
+  const {
+    wishlistState: { wishlist },
+    wishlistDispatch,
+  } = useWishlist();
+
   return (
     <>
       <div className="gh-card card card-image shadow">
         <div className="card-image-container">
-          <i className="ph-heart card-icon-heart gh-heart"></i>
+          {/* <HeartStraight size={24}  className="ph-heart card-icon-heart gh-heart"/> */}
           <img
             src={product.imgSrc}
             alt="product-image"
-            className="card-image"
+            className="card-image image image-md"
           />
           <div className="card-rating">
             <span className="rating">{product.rating}</span>
             <i className="fas fa-star card-icon-star"></i> | {product.review}
           </div>
         </div>
-        <div className="card-content">
-          <div className="gh-card-title card-image-content-title">
+        <div className="card-content ">
+          <div className="gh-card-title card-image-content-title image">
             {product.name}
           </div>
 
           <div className="price-text">
             <del className="card-text-red">{product.price}</del>
-            <span style={{ fontSize: "1.2rem" }}>{product.discountPrice}</span>
+            <span style={{ fontSize: "1.2rem" }}>
+              Rs.{product.discountPrice}
+            </span>
             <span>{product.off}</span>
           </div>
         </div>
         <div className="card-btn-container gh-btn-container">
-          <button
-            className="card-btn gh-btn gh-btn-primary"
-            onClick={() => addToCart()}
-            disabled={!product.inStock}
-            style={{ opacity: !product.inStock && "0.5" }}
-          >
-            {product.inStock === true ? "Add to cart" : "out of stock"}
-          </button>
+          {cart.some((item) => item.id === product.id) ? (
+            <Link to="/cartmanagement">
+              <button className="card-btn gh-btn gh-btn-primary">
+                Go To Cart
+              </button>
+            </Link>
+          ) : (
+            <button
+              className="card-btn gh-btn gh-btn-primary"
+              onClick={() =>
+                cartDispatch({ type: "ADD_TO_CART", payload: product })
+              }
+              disabled={!product.inStock}
+              style={{ opacity: !product.inStock && "0.5" }}
+            >
+              {product.inStock === true ? "Add to cart" : "out of stock"}
+            </button>
+          )}
 
-          <button
-            className="card-btn gh-btn gh-btn-secondary"
-            onClick={() => addToWishlist()}
-          >
-            Wishlist
-          </button>
+          {wishlist.some((item) => item.id === product.id) ? (
+            <Link to="/wishlist">
+              <button className="card-btn gh-btn gh-btn-secondary">
+                Go To Wishlist
+              </button>
+            </Link>
+          ) : (
+            <button
+              className="card-btn gh-btn gh-btn-secondary"
+              onClick={() =>
+                wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: product })
+              }
+            >
+              Wishlist
+            </button>
+          )}
         </div>
       </div>
     </>

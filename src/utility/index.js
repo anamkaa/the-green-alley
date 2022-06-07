@@ -4,3 +4,4 @@ export {getRatingProduct} from "./filter-by-rating";
 export {getSearchProduct} from "./filter-by-search";
 export {getStockProduct} from "./filter-by-stock";
 export {getSortedProduct} from "./sort-by-price";
+export {loginText} from "./lgin-lgout-function";
