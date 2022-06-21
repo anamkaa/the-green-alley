@@ -1,7 +1,9 @@
-const urlPathname = window.location.pathname;
-export const loginText = () => {
-  if (urlPathname==="/cartmanagement"||urlPathname==="/wishlist") {
-    return "Logout";
-  }
-  return "Login";
-}
+import { useAuth } from "../context/auth-context";
+
+export const LoginText = () => {
+  const {
+    user: { userInfo },
+  } = useAuth();
+
+  return userInfo?.firstName ?? "login";
+};

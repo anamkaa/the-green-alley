@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { useFilter } from "../../context/filter-context";
-import { loginText } from "../../utility";
+import { LoginText } from "../../utility";
 
 const Navbar = () => {
   const {
@@ -53,7 +53,7 @@ const Navbar = () => {
           <Link to="/login">
             <div className="gh-nav-icon-chip nav-icon-chip">
               <User size={24} className="gh-nav-icon" />
-              <span className="nav-icon-text">{loginText()}</span>
+              <span className="nav-icon-text">{LoginText()}</span>
             </div>
           </Link>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="wrapper">
+      <div className="wrapper wrapper-nav">
         <div className="tab-section">Seeds</div>
 
         <div className="tab-section">Plants</div>

@@ -1,8 +1,9 @@
 import React from "react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HeartStraight } from "phosphor-react";
+import { useAuth } from "../../context/auth-context";
 
 const Productcard = ({ product }) => {
   const {
@@ -14,6 +15,11 @@ const Productcard = ({ product }) => {
     wishlistState: { wishlist },
     wishlistDispatch,
   } = useWishlist();
+
+  const {
+    user: { isLogged },
+  } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -54,7 +60,9 @@ const Productcard = ({ product }) => {
             <button
               className="card-btn gh-btn gh-btn-primary"
               onClick={() =>
-                cartDispatch({ type: "ADD_TO_CART", payload: product })
+                isLogged
+                  ? cartDispatch({ type: "ADD_TO_CART", payload: product })
+                  : navigate("/login")
               }
               disabled={!product.inStock}
               style={{ opacity: !product.inStock && "0.5" }}
@@ -73,7 +81,12 @@ const Productcard = ({ product }) => {
             <button
               className="card-btn gh-btn gh-btn-secondary"
               onClick={() =>
-                wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: product })
+                isLogged
+                  ? wishlistDispatch({
+                      type: "ADD_TO_WISHLIST",
+                      payload: product,
+                    })
+                  : navigate("/login")
               }
             >
               Wishlist
