@@ -23,7 +23,7 @@ const Logoutform = () => {
       <div className="main-wrap">
         <div className="gh-login-wrap">
           <div className="gh-login-title h5 text-center">
-            Welcome {userInfo.firstName}
+            Welcome {userInfo?.firstName}
           </div>
 
           <div className="gh-input-wrap-col gh-input-margin">
