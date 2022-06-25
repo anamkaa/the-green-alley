@@ -3,6 +3,7 @@ import { CaretRight } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useNavigate, useLocation } from "react-router-dom";
+
 import axios from "axios";
 
 const Loginform = () => {
@@ -21,6 +22,25 @@ const Loginform = () => {
       const { data } = await axios.post(`/api/auth/login`, {
         email: email,
         password: password,
+      });
+
+      localStorage.setItem("token", JSON.stringify(data.encodedToken));
+      setUser({
+        tokenVal: JSON.stringify(data.encodedToken),
+        isLogged: true,
+        userInfo: data.foundUser,
+      });
+      navigate(location.state.from.pathname);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const guestLoginHandler = async () => {
+    try {
+      const { data } = await axios.post(`/api/auth/login`, {
+        email: "guestuser@gmail.com",
+        password: "guestuser",
       });
 
       localStorage.setItem("token", JSON.stringify(data.encodedToken));
@@ -97,6 +117,14 @@ const Loginform = () => {
               }}
             >
               {isLogged ? "Logout" : "Login"}
+            </button>
+            <button
+              className="gh-login-btn"
+              onClick={() => {
+                guestLoginHandler();
+              }}
+            >
+              Login as Guest
             </button>
           </div>
 
