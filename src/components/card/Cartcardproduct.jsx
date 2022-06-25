@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PlusCircle, MinusCircle } from "phosphor-react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import toast from "react-hot-toast";
 
 const Cartcardproduct = ({ product }) => {
   const {
@@ -55,13 +56,17 @@ const Cartcardproduct = ({ product }) => {
               className="card-btn gh-btn gh-btn-primary"
               onClick={() => {
                 cartDispatch({ type: "REMOVE_FROM_CART", payload: product });
+                toast.success("Removed from Cart");
               }}
             >
               Remove from Cart
             </button>
             <button
               className="card-btn gh-btn gh-btn-secondary"
-              onClick={() => moveToWishlist(product)}
+              onClick={() => {
+                moveToWishlist(product);
+                toast.success("Moved to Wishlist");
+              }}
             >
               Move to Wishlist
             </button>

@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Wishlistcard = ({ product }) => {
   const {
@@ -48,6 +49,7 @@ const Wishlistcard = ({ product }) => {
               className="card-btn gh-btn gh-btn-primary"
               onClick={() => {
                 moveToCart(product);
+                toast.success("Moved to Cart");
               }}
             >
               Move to Cart
@@ -61,6 +63,7 @@ const Wishlistcard = ({ product }) => {
                 type: "REMOVE_FROM_WISHLIST",
                 payload: product,
               });
+              toast.success("Removed from Wishlist");
             }}
           >
             Remove From Wishlist
