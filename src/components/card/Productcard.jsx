@@ -61,10 +61,21 @@ const Productcard = ({ product }) => {
             <button
               className="card-btn gh-btn gh-btn-primary"
               onClick={() => {
-                isLogged
-                  ? cartDispatch({ type: "ADD_TO_CART", payload: product })
-                  : navigate("/login");
-                toast.success("Added to Cart");
+
+                if(isLogged) {
+                  cartDispatch({ type: "ADD_TO_CART", payload: product }) 
+                  toast.success("Added to Cart");
+                }
+                else {
+                  toast("Please Login⚠️")
+                  navigate("/login");
+                
+                }
+
+                // isLogged
+                //   ? cartDispatch({ type: "ADD_TO_CART", payload: product }) 
+                //   : navigate("/login");
+                // toast.success("Added to Cart");
               }}
               disabled={!product.inStock}
               style={{ opacity: !product.inStock && "0.5" }}
@@ -83,13 +94,27 @@ const Productcard = ({ product }) => {
             <button
               className="card-btn gh-btn gh-btn-secondary"
               onClick={() => {
-                isLogged
-                  ? wishlistDispatch({
-                      type: "ADD_TO_WISHLIST",
-                      payload: product,
-                    })
-                  : navigate("/login");
-                toast.success("Added to Wishlist");
+
+                if(isLogged){
+                  wishlistDispatch({
+                    type: "ADD_TO_WISHLIST",
+                    payload: product,
+                  })
+                  toast.success("Added to Wishlist");
+                }
+                else{
+                  toast("Please Login ⚠️")
+                  navigate("/login");
+                 
+                }
+
+                // isLogged
+                //   ? wishlistDispatch({
+                //       type: "ADD_TO_WISHLIST",
+                //       payload: product,
+                //     })
+                //   : navigate("/login");
+                // toast.success("Added to Wishlist");
               }}
             >
               Wishlist
