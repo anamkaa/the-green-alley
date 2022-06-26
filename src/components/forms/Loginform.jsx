@@ -3,6 +3,7 @@ import { CaretRight } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import axios from "axios";
 
@@ -24,6 +25,10 @@ const Loginform = () => {
         password: password,
       });
 
+      toast.success(`Welcome ${data.foundUser.firstName}!`, {
+        icon: "👋",
+      });
+
       localStorage.setItem("token", JSON.stringify(data.encodedToken));
       setUser({
         tokenVal: JSON.stringify(data.encodedToken),
@@ -41,6 +46,10 @@ const Loginform = () => {
       const { data } = await axios.post(`/api/auth/login`, {
         email: "guestuser@gmail.com",
         password: "guestuser",
+      });
+
+      toast.success(`Welcome ${data.foundUser.firstName}!`, {
+        icon: "👋",
       });
 
       localStorage.setItem("token", JSON.stringify(data.encodedToken));

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { CaretRight } from "phosphor-react";
 import { useAuth } from "../../context/auth-context";
+import toast from "react-hot-toast";
 
 const Logoutform = () => {
   const {
@@ -15,6 +16,7 @@ const Logoutform = () => {
     setUser({
       isLogged: false,
     });
+    toast.success("Logged out");
     navigate("/");
   };
 

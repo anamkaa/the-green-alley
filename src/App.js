@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Cartmanagement from "./pages/Cartmanagement";
 import { RequireAuth } from "./components/require-auth";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -36,6 +37,20 @@ function App() {
           }
         />
       </Routes>
+
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 2000,
+          style: {
+            background: "#308a76",
+            color: "#f8f9fa",
+            borderRadius: "0.3rem",
+          },
+        }}
+      />
     </div>
   );
 }

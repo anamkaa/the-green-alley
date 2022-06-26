@@ -3,6 +3,7 @@ import { CaretRight } from "phosphor-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Signupform = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ const Signupform = () => {
         email: email,
         password: password,
       });
+      toast.success("Successfully registered");
       console.log(data);
       localStorage.setItem("token", data.encodedToken);
       console.log("user signed up and token saved");
